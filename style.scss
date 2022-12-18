@@ -1,0 +1,386 @@
+
+$color-one: #ffeaa7;
+$color-two: #55efc4;
+$color-three: #fab1a0;
+$font-one: 'Oxygen', sans-serif;
+$font-two: 'Source Code Pro', monospace;
+$font-color-one: #636e72;
+$font-color-two: #dfe6e9;
+$transition: all 0.5s;
+
+/* Global */
+
+*, *::before, *::after {
+        box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: $font-two;
+    color: $font-color-one;
+    line-height: 1.7;
+}
+
+.splash {
+    background: $color-one;
+    min-height: 500px;
+    display: flex;
+}
+
+.splash-inner {
+    margin: auto; 
+    max-width: 70%;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 900;
+    word-spacing: 18px;
+    line-height: 1.7;
+}
+
+.page-subtitle {
+    margin: 24px 0;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+h1 span:first-of-type {
+    color: $color-two;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 50px 0;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 160px;
+    margin: 24px auto 0 auto;
+    padding: 16px;
+    border-radius: 5px;
+    font-family: $font-two;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-width: 4px;
+    border-style: solid;
+    background-color: inherit;
+    background-position: 100% 0;
+    background-size: 300%;
+    transition: $transition;
+}
+
+.btn:hover {
+    background-position: 0 100%;
+    color: $color-one;
+}
+
+.btn-one {
+    color: $font-color-one;
+    border-color: $color-two;
+    background-image: linear-gradient(90deg, $color-two 50%, transparent 50%);
+}
+
+.btn-two {
+    color: $font-color-one;
+    border-color: $color-three;
+    background-image: linear-gradient(90deg, $color-three 50%, transparent 50%);
+}
+
+.btn-three {
+    color: $font-color-one;
+    border-color: $color-one;
+    background-image: linear-gradient(90deg, $color-one 50%, transparent 50%);
+}
+
+.btn-three:hover {
+    background-position: 0 100%;
+    color: $color-two;
+}
+
+
+.btn-four {
+    color: $color-three;
+    border: none;
+  }
+
+.name {
+    font-size: 48px;
+    margin: 0 0 72px 72px;
+}
+
+/* Navigation */
+
+.navigation {
+    text-align: center;
+    background: $color-one;
+    padding: 12px 0;
+    font-weight: bold;
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.navigation li {
+    display: inline-block;
+    margin: 0 36px 0 0;
+    position: relative;
+    padding: 0 10px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: $font-color-one;
+}
+
+.navigation ul li:hover {
+    background: $color-two;
+    opacity: 0.9;
+}
+
+.navigation ul ul li {
+    display: block;
+    margin: 0 0 12px 0;
+}
+
+.navigation ul li ul {
+    display: none;
+    position: absolute;
+    background: $color-three;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 12px;
+}
+
+.navigation li:hover ul {
+    display: block;
+    text-align: center;
+}
+
+.navigation ul ul li a {
+    color: #FFFFFF;
+    margin: 0 24px;
+}
+
+.navigation ul ul li a:hover {
+    color: $color-one;
+}
+
+.navigation li ul li {
+    display: block;
+}
+
+/* Flexbox */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.box {
+    flex: 0 0 33.333%;
+    padding: 0 40px 0 0;
+}
+
+.num {
+    position: absolute;
+    z-index: 0;
+    font-size: 200px;
+    text-decoration: bold;
+    line-height: 1;
+    color: $color-two;
+    opacity: 0.5;
+}
+
+.text {
+    position: relative;
+    z-index: 1;
+}
+
+h4 {
+    font-size: 24px;
+    margin: 0 0 12px 0;
+}
+
+.box2 {
+    display: flex;
+    width: 48%;
+    position: relative;
+    min-height: 300px;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+}
+
+.text2 {
+    width: 50%;
+    text-align: right;
+    align-self: flex-end;
+    padding: 0 0 0 10px;
+}
+
+.text2 span:first-of-type {
+    font-weight: 700;    
+}
+    
+
+.image {
+    position: relative;
+    width: 48%;
+    height: 250px;
+    align-self: flex-start;
+    background: red;
+    align-self: center;
+}
+
+.image:before {
+    content: ' ';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    background: $color-two;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.image:hover:before {
+    left: 0;
+    top: 0;
+    transition: $transition;
+}
+
+.element img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact {
+    background: $color-one;
+    font-family: $font-two;
+    font-size: 26px;
+} 
+
+form {
+    flex: 2 0 0;
+    padding-right: 96px;
+}
+
+
+.input {
+    background: $color-one;
+    border: none;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    border-bottom: 2px solid;
+    color: $color-two;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    padding-left: 10px;
+    color: black;
+}
+
+.numer {
+    list-style: none;    
+}
+
+.message {
+    line-height: 120px;
+}
+
+.info {
+    flex: 1 0 0;
+}
+
+.info span:first-of-type {
+    font-weight: 700;    
+}
+
+footer {
+    padding: 48px 0;
+}
+
+.social {
+    text-align: center;
+}
+
+.social li {
+    display: inline-block;
+    list-style: none;
+    font-size: 0px;
+}
+
+.social i {
+    text-align: center;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background: $color-one;
+    color: $color-two;
+} 
+
+.social i:hover {
+    transform: scale(1.3);
+    color: $color-three;
+    transition: $transition;
+}
+
+/* Media */
+
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    } 
+    
+    .box2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .text2 {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .element img {
+        max-width: 100%;
+        object-fit: cover;
+        
+    }
+    
+    .numer li {
+        margin: 40px;
+    }
+    
+    .btn {
+        margin: 20px;
+    }
+
+    .navigation li {
+        font-size: 16px;
+        margin: 0 auto;
+    }
+}
